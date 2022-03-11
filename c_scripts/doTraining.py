@@ -60,7 +60,7 @@ def representative_dataset():
         
 converter2 = tf.lite.TFLiteConverter.from_keras_model(model)
 converter2.representative_dataset = representative_dataset
-converter2.optimizations = [tf.lite.Optimize.DEFAULT]
+converter2.optimizations = [tf.lite.Optimize.OPTIMIZE_FOR_SIZE]
 converter2.representative_dataset = representative_dataset
 tflite_quant_model = converter2.convert()
 
